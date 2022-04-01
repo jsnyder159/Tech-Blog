@@ -7,9 +7,10 @@ router.post('/', withAuth, async (req, res) => {
 
   try {
     const newPost = await Post.create({
-      // TODO: POST BODY SENT IN REQUEST. HINT USING SPREAD 
-
-      // TODO: SET USERID userId TO LOGGEDIN USERID
+      // T*ODO: POST BODY SENT IN REQUEST. HINT USING SPREAD
+      ...req.body, 
+      userId: req.session.userId,
+      // T*ODO: SET USERID userId TO LOGGEDIN USERID
 
     });
     res.json(newPost);
@@ -21,7 +22,11 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const [affectedRows] = await Post.update(req.body, {
-      // TODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
+      // T*ODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
+      where: {
+        id: req.params.id,
+        userId: req.session.userId,
+      },
 
     });
 
@@ -38,8 +43,11 @@ router.put('/:id', withAuth, async (req, res) => {
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const [affectedRows] = Post.destroy({
-      // TODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
-
+      // T*ODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
+      where: {
+        id: req.params.id,
+        userId: req.session.userId,
+      },
     });
 
     if (affectedRows > 0) {
