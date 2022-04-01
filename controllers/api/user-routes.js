@@ -47,12 +47,12 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      // TODO: SET USERID userId IN REQUEST SESSION TO ID RETURNED FROM DATABASE
-
-      // TODO: SET USERNAME username IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
-
-      // TODO: SET LOGGEDIN loggedIn TO TRUE IN REQUEST SESSION
-
+      // T*ODO: SET USERID userId IN REQUEST SESSION TO ID RETURNED FROM DATABASE
+      req.session.userId = user.id;
+      // T*ODO: SET USERNAME username IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
+      req.session.username = user.username;
+      // T*ODO: SET LOGGEDIN loggedIn TO TRUE IN REQUEST SESSION
+      req.session.loggedIn = true;
       res.json({ user, message: 'You are now logged in!' });
     });
   } catch (err) {
