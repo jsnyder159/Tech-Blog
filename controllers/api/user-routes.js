@@ -5,17 +5,18 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({
-      // TODO: SET USERNAME TO USERNAME SENT IN REQUEST
-
-      // TODO: SET PASSWORD TO PASSWORD SENT IN REQUEST
+      // T*ODO: SET USERNAME TO USERNAME SENT IN REQUEST
+      username: req.body.username,
+      // T*ODO: SET PASSWORD TO PASSWORD SENT IN REQUEST
+      password: req.body.password,
     });
 
     req.session.save(() => {
-      // TODO: SET USERID userId IN REQUEST SESSION TO ID RETURNED FROM DATABASE
+      // T*ODO: SET USERID userId IN REQUEST SESSION TO ID RETURNED FROM DATABASE
       req.session.userId = newUser.id;
-      // TODO: SET USERNAME username IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
+      // T*ODO: SET USERNAME username IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
       req.session.username = newUser.username;
-      // TODO: SET LOGGEDIN loggedIn TO TRUE IN REQUEST SESSION
+      // T*ODO: SET LOGGEDIN loggedIn TO TRUE IN REQUEST SESSION
       req.session.loggedIn = true;
       res.json(newUser);
     });
