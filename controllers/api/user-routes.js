@@ -12,11 +12,11 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       // TODO: SET USERID userId IN REQUEST SESSION TO ID RETURNED FROM DATABASE
-
+      req.session.userId = newUser.id;
       // TODO: SET USERNAME username IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
-
+      req.session.username = newUser.username;
       // TODO: SET LOGGEDIN loggedIn TO TRUE IN REQUEST SESSION
-
+      req.session.loggedIn = true;
       res.json(newUser);
     });
   } catch (err) {
