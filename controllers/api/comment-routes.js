@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       // T*ODO: COMMENT BODY IN REQUEST USING SPREAD
-        ...req.body,
+      ...req.body,
       // T*ODO: SET USERID userId TO SESSION LOGGEDIN USERID
       userId: req.session.userId
     });

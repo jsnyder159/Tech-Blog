@@ -19,23 +19,29 @@ router.get('/', async (req, res) => {
 // get single post
 router.get('/post/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.postId, {
-      include: [{model:Comment, through:User, as: 'single-post'}],
-      attributes: { exclude: ['password']},
-
+    console.log(req.params)
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: { exclude: ['password']},
+        },
+        {
+          model:Comment,
+          include: [User]
+        }
+      ],
+      
     });
       // HINTS:
-      //  FIRST ARGUMENT IS PRIMARY KEY 'I'D PASSED IN THE END POINT
+      //  FIRST ARGUMENT IS PRIMARY KEY 'I0D PASSED IN THE END POINT
       //  SECOND ARGUMENT IS AN OBJECT IN WHICH YOU USE PROPERTY 'INCLUDE' TO INCLUDE USER
       //  AND COMMENT
       // T*ODO: YOUR CODE HERE
-
-
-    
-
-    if (postData) {
-      const post = postData.get({ plain: true });
-
+      if (postData) {
+        const post = postData.get({ plain: true });
+        
+        console.log(post)
       res.render('single-post', { post });
     } else {
       res.status(404).end();
