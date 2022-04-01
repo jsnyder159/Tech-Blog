@@ -19,10 +19,11 @@ router.get('/', async (req, res) => {
 // get single post
 router.get('/post/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.session.postId, {
-      include: [{ model: Comment}, {model: User}],
+    const postData = await Post.findByPk(req.params.postId, {
+      include: [{model:Comment, through:User, as: 'single-post'}],
       attributes: { exclude: ['password']},
-    }
+
+    });
       // HINTS:
       //  FIRST ARGUMENT IS PRIMARY KEY 'I'D PASSED IN THE END POINT
       //  SECOND ARGUMENT IS AN OBJECT IN WHICH YOU USE PROPERTY 'INCLUDE' TO INCLUDE USER
@@ -30,7 +31,7 @@ router.get('/post/:id', async (req, res) => {
       // T*ODO: YOUR CODE HERE
 
 
-    );
+    
 
     if (postData) {
       const post = postData.get({ plain: true });
