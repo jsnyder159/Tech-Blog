@@ -29,6 +29,9 @@
   
   ## Screenshots
   
+![Log In](./public/assets/login-page.PNG)
+![Main Blog](./public/assets/main-blog-page.PNG)
+![Saved Comments](./public/assets/saved-blog-page.PNG)
 
   
   
