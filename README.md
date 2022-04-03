@@ -28,6 +28,7 @@
   
   
   ## Screenshots
+[Live application](https://tech-blog-jw.herokuapp.com/)
   
 ![Log In](./public/assets/login-page.PNG)
 ![Main Blog](./public/assets/main-blog-page.PNG)
