@@ -7,7 +7,7 @@ User.hasMany(Post, {
   onDelete: 'CASCADE'
 });
 
-// Establish one-to-many relastionship with User
+// Establish one-to-many relationship with User
 Post.belongsTo(User, {
   foreignKey: 'userId',
   onDelete: 'CASCADE'
