@@ -1,7 +1,7 @@
 #   Tech Blog 
 
   ## Description
-  I created an tech blog application.  You are able to create an account, the DB will save your user data. Fun and easy way to track your thoughts and share with your friends.
+  I created a tech blog application.  You are able to create an account, the DB will save your user data. Fun and easy way to track your thoughts and share with your friends.
   
   ## Table of Contents
   
@@ -14,7 +14,7 @@
   
   ## Installation
   
-  Download the repo, setup an .env file, npm i.
+  Download the repo, npm i.
   
   
   ## Tools
@@ -28,9 +28,8 @@
   
   
   ## Screenshots
-<<<<<<< HEAD
-=======
-[Live application](https://tech-blog-jw.herokuapp.com/)
+
+[Live application](https://tech-blog.herokuapp.com//)
 
   
 ![Log In](./public/assets/login-page.PNG)
@@ -43,8 +42,4 @@
 
   If you have any questions about the project please contact me at.
   - [GitHub](https://github.com/Jsnyder159?tab=repositories)
-<<<<<<< HEAD
   - Email: jw.snyder159@gmail.com
-=======
-  - Email: jw.snyder159@gmail.com
->>>>>>> cb30cd5d4eb66af2b33d4f89e02d3887962d7d6b
