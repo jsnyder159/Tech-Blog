@@ -29,7 +29,7 @@
   
   ## Screenshots
 
-[Live application](https://tech-blog.herokuapp.com//)
+[Live application](https://git.heroku.com/tech-blog.git)
 
   
 ![Log In](./public/assets/login-page.PNG)
