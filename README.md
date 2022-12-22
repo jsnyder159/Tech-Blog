@@ -28,6 +28,10 @@
   
   
   ## Screenshots
+<<<<<<< HEAD
+=======
+[Live application](https://tech-blog-jw.herokuapp.com/)
+
   
 ![Log In](./public/assets/login-page.PNG)
 ![Main Blog](./public/assets/main-blog-page.PNG)
@@ -39,4 +43,8 @@
 
   If you have any questions about the project please contact me at.
   - [GitHub](https://github.com/Jsnyder159?tab=repositories)
+<<<<<<< HEAD
   - Email: jw.snyder159@gmail.com
+=======
+  - Email: jw.snyder159@gmail.com
+>>>>>>> cb30cd5d4eb66af2b33d4f89e02d3887962d7d6b
